@@ -1,0 +1,19 @@
+<div class="hero-unit">
+  <h2>All Pizzas</h2>
+  <%- linkTo('Create a new Pizza', addPizzaPath, {class: 'btn pull-right'}); %>
+</div>
+
+<div id="pizzas-list">
+<% if (pizzas) { %>
+<% for (var i = 0, ii = pizzas.length; i < ii; i++) { %>
+  <div class="row list-item" id="pizza-<%= pizzas[i].id; %>">
+    <div class="span8">
+      <h3><%- linkTo(pizzas[i].id, pizzaPath(pizzas[i].id)); %></h3>
+    </div>
+    <div class="span4">
+      <h3><i class="icon-list-alt"></i><%= pizzas[i].id; %></h3>
+    </div>
+  </div>
+<% } %>
+<% } %>
+</div>
